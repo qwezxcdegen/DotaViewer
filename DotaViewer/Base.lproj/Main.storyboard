@@ -160,8 +160,47 @@
                     <view key="view" contentMode="scaleToFill" id="0pT-fa-9Nw">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="27H-vx-qK5">
+                                <rect key="frame" x="34" y="317" width="325" height="33"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="W84-rQ-zUP">
+                                        <rect key="frame" x="0.0" y="0.0" width="108.33333333333333" height="33"/>
+                                        <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="24"/>
+                                        <color key="textColor" systemColor="systemGreenColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Sf3-ap-TTj">
+                                        <rect key="frame" x="108.33333333333334" y="0.0" width="108.33333333333334" height="33"/>
+                                        <fontDescription key="fontDescription" name="AvenirNext-Bold" family="Avenir Next" pointSize="24"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="z1S-hb-1jB">
+                                        <rect key="frame" x="216.66666666666666" y="0.0" width="108.33333333333334" height="33"/>
+                                        <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="24"/>
+                                        <color key="textColor" systemColor="systemRedColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="person" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="VUZ-qf-UlP">
+                                <rect key="frame" x="121.66666666666669" y="104.66666666666667" width="150" height="147.33333333333331"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="150" id="QQ3-n2-00R"/>
+                                    <constraint firstAttribute="width" constant="150" id="xOk-qh-P5f"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="cH4-05-Sgu"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="VUZ-qf-UlP" firstAttribute="top" secondItem="cH4-05-Sgu" secondAttribute="top" id="DYl-rE-qaa"/>
+                            <constraint firstItem="27H-vx-qK5" firstAttribute="leading" secondItem="cH4-05-Sgu" secondAttribute="leading" constant="34" id="WcQ-EI-Yfy"/>
+                            <constraint firstItem="cH4-05-Sgu" firstAttribute="trailing" secondItem="27H-vx-qK5" secondAttribute="trailing" constant="34" id="lMX-GN-pLX"/>
+                            <constraint firstItem="VUZ-qf-UlP" firstAttribute="centerX" secondItem="0pT-fa-9Nw" secondAttribute="centerX" id="qKm-Qj-6bj"/>
+                            <constraint firstItem="27H-vx-qK5" firstAttribute="top" secondItem="VUZ-qf-UlP" secondAttribute="bottom" constant="64" id="xK6-Xa-Hr5"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="LDw-Cp-oSX">
                         <barButtonItem key="leftBarButtonItem" title="Back" id="q2P-hV-3Fq">
@@ -171,7 +210,11 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="losesLabel" destination="z1S-hb-1jB" id="Pxr-1q-Acu"/>
                         <outlet property="navigationBarLabel" destination="LDw-Cp-oSX" id="6BJ-al-h4N"/>
+                        <outlet property="profileImage" destination="VUZ-qf-UlP" id="5eM-MV-kds"/>
+                        <outlet property="winsLabel" destination="W84-rQ-zUP" id="Yf4-so-BkT"/>
+                        <outlet property="wlPercentageLabel" destination="Sf3-ap-TTj" id="Tmv-Au-xH4"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iVH-hc-lra" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -200,9 +243,16 @@
     </scenes>
     <resources>
         <image name="magnifyingglass.circle.fill" catalog="system" width="128" height="123"/>
+        <image name="person" catalog="system" width="128" height="121"/>
         <image name="person.crop.circle.badge.exclamationmark.fill" catalog="system" width="128" height="114"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemGreenColor">
+            <color red="0.20392156862745098" green="0.7803921568627451" blue="0.34901960784313724" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemRedColor">
+            <color red="1" green="0.23137254901960785" blue="0.18823529411764706" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
