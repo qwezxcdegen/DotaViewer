@@ -29,7 +29,7 @@ class SearchViewController: UIViewController {
     
     private func fetchProfiles() {
         guard textField.text != nil else { return }
-        let urlString = "https://api.opendota.com/api/search?q=\(textField.text!)"
+        let urlString = "https://api.opendota.com/api/search?q=\(textField.text!)".encodeUrl
         guard let url = URL(string: urlString) else { return }
         var request = URLRequest(url: url, timeoutInterval: 10.0)
         request.httpMethod = "GET"
