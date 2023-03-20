@@ -27,13 +27,15 @@ class SearchViewController: UIViewController {
         let detailedVC = navVC.viewControllers.first as! DetailedProfileViewController
         let indexPath = tableView.indexPathForSelectedRow!
         
-        detailedVC.id = String(profiles[indexPath.row].account_id)
-        detailedVC.name = profiles[indexPath.row].personaname
+        detailedVC.profileID = String(profiles[indexPath.row].account_id)
+        detailedVC.profileName = profiles[indexPath.row].personaname
+        detailedVC.profileImageString = profiles[indexPath.row].avatarfull
         
     }
 
     @IBAction func searchButtonPressed(_ sender: UIButton) {
         fetchProfiles()
+        view.endEditing(true)
     }
     
     private func fetchProfiles() {
