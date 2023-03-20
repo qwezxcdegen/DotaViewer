@@ -30,4 +30,9 @@ extension SearchViewController: UITableViewDelegate, UITableViewDataSource {
         cell.profileImage.load(url: url)
         return cell
     }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        performSegue(withIdentifier: "detailedSegue", sender: nil)
+    }
+    
 }

@@ -22,6 +22,15 @@ class SearchViewController: UIViewController {
         
     }
 
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let navVC = segue.destination as! UINavigationController
+        let detailedVC = navVC.viewControllers.first as! DetailedProfileViewController
+        let indexPath = tableView.indexPathForSelectedRow!
+        
+        detailedVC.id = String(profiles[indexPath.row].account_id)
+        detailedVC.name = profiles[indexPath.row].personaname
+        
+    }
 
     @IBAction func searchButtonPressed(_ sender: UIButton) {
         fetchProfiles()
