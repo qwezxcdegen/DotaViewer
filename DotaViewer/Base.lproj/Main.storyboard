@@ -126,6 +126,7 @@
                                             <outlet property="profileImage" destination="ZUL-DJ-ntS" id="1kF-At-W0H"/>
                                             <outlet property="profileLastMatchLabel" destination="hdB-tk-RfU" id="7QM-nW-iKf"/>
                                             <outlet property="profileNameLabel" destination="GMU-nO-p8i" id="jRo-I3-EmI"/>
+                                            <segue destination="FpW-5R-QXF" kind="presentation" identifier="detailedSegue" modalPresentationStyle="fullScreen" id="gl8-aO-FYE"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -151,6 +152,50 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="107.63358778625954" y="3.5211267605633805"/>
+        </scene>
+        <!--Detailed Profile View Controller-->
+        <scene sceneID="aT8-hv-6N0">
+            <objects>
+                <viewController id="0g7-GP-gdr" customClass="DetailedProfileViewController" customModule="DotaViewer" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="0pT-fa-9Nw">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="cH4-05-Sgu"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="LDw-Cp-oSX">
+                        <barButtonItem key="leftBarButtonItem" title="Back" id="q2P-hV-3Fq">
+                            <connections>
+                                <action selector="backButtonPressed:" destination="0g7-GP-gdr" id="bOu-tn-aaN"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="navigationBarLabel" destination="LDw-Cp-oSX" id="6BJ-al-h4N"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="iVH-hc-lra" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1921.3740458015266" y="3.5211267605633805"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="L6J-Of-2lO">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="FpW-5R-QXF" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" id="bqj-5D-5OL"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="x2O-IQ-uYY">
+                        <rect key="frame" x="0.0" y="59" width="393" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="0g7-GP-gdr" kind="relationship" relationship="rootViewController" id="OSq-Xa-kPX"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="DdN-Qo-TXx" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="994.6564885496183" y="3.5211267605633805"/>
         </scene>
     </scenes>
     <resources>
