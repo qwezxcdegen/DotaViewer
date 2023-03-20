@@ -18,6 +18,7 @@
 		075E7BD029C8B0F100B2724E /* ProfileModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 075E7BCF29C8B0F100B2724E /* ProfileModel.swift */; };
 		075E7BD229C8C99E00B2724E /* UIImageView + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 075E7BD129C8C99D00B2724E /* UIImageView + Extension.swift */; };
 		075E7BD429C8CC3600B2724E /* String + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 075E7BD329C8CC3600B2724E /* String + Extension.swift */; };
+		075E7BDA29C8E5C800B2724E /* DetailedProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 075E7BD929C8E5C800B2724E /* DetailedProfileViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +35,7 @@
 		075E7BCF29C8B0F100B2724E /* ProfileModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileModel.swift; sourceTree = "<group>"; };
 		075E7BD129C8C99D00B2724E /* UIImageView + Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView + Extension.swift"; sourceTree = "<group>"; };
 		075E7BD329C8CC3600B2724E /* String + Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String + Extension.swift"; sourceTree = "<group>"; };
+		075E7BD929C8E5C800B2724E /* DetailedProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailedProfileViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -70,6 +72,7 @@
 				075E7BB729C8A5F400B2724E /* AppDelegate.swift */,
 				075E7BCF29C8B0F100B2724E /* ProfileModel.swift */,
 				075E7BBB29C8A5F400B2724E /* SearchViewController.swift */,
+				075E7BD929C8E5C800B2724E /* DetailedProfileViewController.swift */,
 				075E7BCB29C8ADCB00B2724E /* SearchVC + TableVC.swift */,
 				075E7BD129C8C99D00B2724E /* UIImageView + Extension.swift */,
 				075E7BD329C8CC3600B2724E /* String + Extension.swift */,
@@ -158,6 +161,7 @@
 				075E7BD429C8CC3600B2724E /* String + Extension.swift in Sources */,
 				075E7BD229C8C99E00B2724E /* UIImageView + Extension.swift in Sources */,
 				075E7BCC29C8ADCB00B2724E /* SearchVC + TableVC.swift in Sources */,
+				075E7BDA29C8E5C800B2724E /* DetailedProfileViewController.swift in Sources */,
 				075E7BD029C8B0F100B2724E /* ProfileModel.swift in Sources */,
 				075E7BCE29C8AEF700B2724E /* ProfileTableViewCell.swift in Sources */,
 				075E7BBA29C8A5F400B2724E /* SceneDelegate.swift in Sources */,
