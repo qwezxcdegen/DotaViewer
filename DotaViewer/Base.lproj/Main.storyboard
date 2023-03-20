@@ -57,7 +57,7 @@
                                                     </constraints>
                                                 </imageView>
                                                 <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="5tM-uY-QrY">
-                                                    <rect key="frame" x="101.33333333333334" y="11" width="271.66666666666663" height="98"/>
+                                                    <rect key="frame" x="95.333333333333343" y="11" width="277.66666666666663" height="98"/>
                                                     <subviews>
                                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="t5Z-Hn-PuW">
                                                             <rect key="frame" x="0.0" y="0.0" width="84" height="98"/>
@@ -86,7 +86,7 @@
                                                             </constraints>
                                                         </stackView>
                                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" alignment="top" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="83c-Wg-sua">
-                                                            <rect key="frame" x="88.000000000000014" y="0.0" width="183.66666666666669" height="98"/>
+                                                            <rect key="frame" x="88.000000000000014" y="0.0" width="189.66666666666669" height="98"/>
                                                             <subviews>
                                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ID" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dx9-GV-pdu">
                                                                     <rect key="frame" x="0.0" y="0.0" width="16.333333333333332" height="23.333333333333332"/>
@@ -114,7 +114,7 @@
                                             <constraints>
                                                 <constraint firstAttribute="bottom" secondItem="ZUL-DJ-ntS" secondAttribute="bottom" constant="22" id="5rj-6M-NDz"/>
                                                 <constraint firstItem="ZUL-DJ-ntS" firstAttribute="leading" secondItem="2Fb-NA-ztc" secondAttribute="leading" constant="14" id="Jea-IR-8Lb"/>
-                                                <constraint firstItem="5tM-uY-QrY" firstAttribute="leading" secondItem="ZUL-DJ-ntS" secondAttribute="trailing" constant="14" id="MbF-bE-Vt1"/>
+                                                <constraint firstItem="5tM-uY-QrY" firstAttribute="leading" secondItem="ZUL-DJ-ntS" secondAttribute="trailing" constant="8" id="MbF-bE-Vt1"/>
                                                 <constraint firstItem="ZUL-DJ-ntS" firstAttribute="top" secondItem="2Fb-NA-ztc" secondAttribute="top" constant="22" id="V9v-eg-qpy"/>
                                                 <constraint firstItem="5tM-uY-QrY" firstAttribute="trailing" secondItem="2Fb-NA-ztc" secondAttribute="trailingMargin" id="j4Y-z1-zU1"/>
                                                 <constraint firstAttribute="bottomMargin" secondItem="5tM-uY-QrY" secondAttribute="bottom" id="oMr-TL-Xuc"/>

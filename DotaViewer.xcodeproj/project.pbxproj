@@ -66,16 +66,16 @@
 		075E7BB629C8A5F400B2724E /* DotaViewer */ = {
 			isa = PBXGroup;
 			children = (
-				075E7BB729C8A5F400B2724E /* AppDelegate.swift */,
 				075E7BB929C8A5F400B2724E /* SceneDelegate.swift */,
-				075E7BBB29C8A5F400B2724E /* SearchViewController.swift */,
+				075E7BB729C8A5F400B2724E /* AppDelegate.swift */,
 				075E7BCF29C8B0F100B2724E /* ProfileModel.swift */,
-				075E7BCD29C8AEF700B2724E /* ProfileTableViewCell.swift */,
-				075E7BBD29C8A5F400B2724E /* Main.storyboard */,
-				075E7BD329C8CC3600B2724E /* String + Extension.swift */,
+				075E7BBB29C8A5F400B2724E /* SearchViewController.swift */,
 				075E7BCB29C8ADCB00B2724E /* SearchVC + TableVC.swift */,
 				075E7BD129C8C99D00B2724E /* UIImageView + Extension.swift */,
+				075E7BD329C8CC3600B2724E /* String + Extension.swift */,
+				075E7BCD29C8AEF700B2724E /* ProfileTableViewCell.swift */,
 				075E7BC029C8A5F400B2724E /* Assets.xcassets */,
+				075E7BBD29C8A5F400B2724E /* Main.storyboard */,
 				075E7BC229C8A5F400B2724E /* LaunchScreen.storyboard */,
 				075E7BC529C8A5F400B2724E /* Info.plist */,
 			);
