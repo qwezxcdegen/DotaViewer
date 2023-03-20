@@ -20,8 +20,14 @@ extension SearchViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "profileCell", for: indexPath) as! ProfileTableViewCell
         cell.profileNameLabel.text = profiles[indexPath.row].personaname
+        cell.profileIDLabel.text = String(profiles[indexPath.row].account_id)
+        if let lastMatch = profiles[indexPath.row].last_match_time {
+            cell.profileLastMatchLabel.text = String(lastMatch.split(separator: "T")[0])
+        } else {
+            cell.profileLastMatchLabel.text = "-"
+        }
+        let url = URL(string: profiles[indexPath.row].avatarfull)!
+        cell.profileImage.load(url: url)
         return cell
     }
-    
-    
 }

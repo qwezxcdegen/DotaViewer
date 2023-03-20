@@ -8,5 +8,8 @@
 import UIKit
 
 class ProfileTableViewCell: UITableViewCell {
+    @IBOutlet weak var profileIDLabel: UILabel!
     @IBOutlet weak var profileNameLabel: UILabel!
+    @IBOutlet weak var profileLastMatchLabel: UILabel!
+    @IBOutlet weak var profileImage: UIImageView!
 }
