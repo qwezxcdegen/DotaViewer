@@ -6,9 +6,13 @@
 //
 
 import Foundation
+import UIKit
 
 struct ProfileElement: Codable {
+    let account_id: Int
     let personaname: String
+    let avatarfull: String
+    let last_match_time: String?
 }
 
 typealias Profile = [ProfileElement]
