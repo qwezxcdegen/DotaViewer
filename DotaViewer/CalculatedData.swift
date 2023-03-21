@@ -178,27 +178,32 @@ func timeSince(seconds: Int) -> String {
     let weeks = days / 7
     let months = Double(weeks) / 4.345
     let years = months / 12.0
-    if seconds <= 60 {
+    if seconds < 60 {
         if seconds < 2 {
             return "\(seconds) second"
         }
         return "\(seconds) seconds"
-    } else if hours <= 24 {
+    } else if minutes < 60 {
+        if minutes < 2 {
+            return "\(minutes) minute"
+        }
+        return "\(minutes) minutes"
+    } else if hours < 24 {
         if hours < 2 {
             return "\(hours) hour"
         }
         return "\(hours) hours"
-    } else if days <= 7 {
+    } else if days < 7 {
         if days < 2 {
             return "\(days) day"
         }
         return "\(days) days"
-    } else if Double(weeks) <= 4.345 {
+    } else if Double(weeks) < 4.345 {
         if weeks < 2 {
             return "\(weeks) week"
         }
         return "\(weeks) weeks"
-    } else if months <= 12 {
+    } else if months < 12 {
         if months < 2 {
             return "\(Int(months)) month"
         }
