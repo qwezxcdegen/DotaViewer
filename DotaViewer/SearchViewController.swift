@@ -13,6 +13,8 @@ class SearchViewController: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
     
+    @IBOutlet weak var activityIndicatorView: UIActivityIndicatorView!
+    
     var profiles: Profile = []
     
     override func viewDidLoad() {
@@ -34,6 +36,7 @@ class SearchViewController: UIViewController {
     }
 
     @IBAction func searchButtonPressed(_ sender: UIButton) {
+        self.activityIndicatorView.startAnimating()
         fetchProfiles()
         view.endEditing(true)
     }
@@ -56,6 +59,7 @@ class SearchViewController: UIViewController {
                 }
                 print(self.profiles)
                 self.tableView.reloadData()
+                self.activityIndicatorView.stopAnimating()
             }
         }.resume()
     }
