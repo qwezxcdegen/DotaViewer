@@ -148,15 +148,66 @@ func fromIDToSide(ID playerSlot: Int) -> String {
 
 func fromIDToGameMode(ID gameModeID: Int) -> String {
     switch gameModeID {
-    case 0: return "Unknown"
     case 1: return "All pick"
     case 2: return "Captains mode"
     case 3: return "Random draft"
     case 4: return "Single draft"
     case 5: return "All random"
+    case 7: return "Diretide"
+    case 11: return "Mid only"
+    case 15: return "Custom"
+    case 18: return "Ability draft"
+    case 21: return "1v1 mid"
+    case 22: return "All draft"
     case 23: return "Turbo"
         // Should add another modes here
-    default: return "Some mode"
+    default: return "Unknown"
+    }
+}
+
+func secondsFormatter(seconds: Double) -> String {
+    let formatter = DateComponentsFormatter()
+    return formatter.string(from: seconds) ?? "00:00"
+}
+
+func timeSince(seconds: Int) -> String {
+    let seconds = Int(Date().timeIntervalSince1970) - seconds
+    let minutes = seconds / 60
+    let hours = minutes / 60
+    let days = hours / 24
+    let weeks = days / 7
+    let months = Double(weeks) / 4.345
+    let years = months / 12.0
+    if seconds <= 60 {
+        if seconds < 2 {
+            return "\(seconds) second"
+        }
+        return "\(seconds) seconds"
+    } else if hours <= 24 {
+        if hours < 2 {
+            return "\(hours) hour"
+        }
+        return "\(hours) hours"
+    } else if days <= 7 {
+        if days < 2 {
+            return "\(days) day"
+        }
+        return "\(days) days"
+    } else if Double(weeks) <= 4.345 {
+        if weeks < 2 {
+            return "\(weeks) week"
+        }
+        return "\(weeks) weeks"
+    } else if months <= 12 {
+        if months < 2 {
+            return "\(Int(months)) month"
+        }
+        return "\(Int(months)) months"
+    } else {
+        if years < 2 {
+            return "\(Int(years)) year"
+        }
+        return "\(Int(years)) years"
     }
 }
 
