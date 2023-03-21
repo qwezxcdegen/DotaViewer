@@ -10,8 +10,17 @@ import UIKit
 class DetailedProfileViewController: UIViewController {
     
     // MARK: - Properties
+    // Featured Heroes TV
     @IBOutlet weak var featuredHeroesTableView: UITableView!
+    
+    // Recent Matches TV
+    @IBOutlet weak var recentMatchesTableView: UITableView!
+    
+    
+    // Nav bar
     @IBOutlet weak var navigationBarLabel: UINavigationItem!
+    
+    // Labels
     @IBOutlet weak var winsLabel: UILabel!
     @IBOutlet weak var losesLabel: UILabel!
     @IBOutlet weak var wlPercentageLabel: UILabel!
@@ -32,20 +41,21 @@ class DetailedProfileViewController: UIViewController {
     // Featured heroes
     var heroes: Heroes = []
     
-    // Last games
-    // var recentGames
+    // Recent matches
+    var matches: RecentMatches = []
     
     // MARK: - ViewDidLoad
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.featuredHeroesTableView.delegate = self
-        self.featuredHeroesTableView.dataSource = self
+        setupTableViews()
         
         navigationBarLabel.title = profileName
         
         fetchWinLoses()
         
         fetchFeaturedHeroes()
+        
+        fetchRecentMatches()
         
         profileImage.load(url: URL(string: profileImageString)!)
         
@@ -61,7 +71,7 @@ class DetailedProfileViewController: UIViewController {
     
     
     
-    // MARK: - func FetchWinLoses
+    // MARK: - Fetch Wins Loses
     private func fetchWinLoses() {
         guard profileID != "" else { return }
         let urlString = "https://api.opendota.com/api/players/\(profileID)/wl".encodeUrl
@@ -84,7 +94,7 @@ class DetailedProfileViewController: UIViewController {
         }.resume()
     }
     
-    // MARK: - func fetchFeaturedHeroes
+    // MARK: - Fetch Featured Heroes
     private func fetchFeaturedHeroes() {
         guard profileID != "" else { return }
         let urlString = "https://api.opendota.com/api/players/\(profileID)/heroes".encodeUrl
@@ -105,4 +115,39 @@ class DetailedProfileViewController: UIViewController {
         }.resume()
     }
     
+    // MARK: - Fetch Recent Matches
+    private func fetchRecentMatches() {
+        guard profileID != "" else { return }
+        let urlString = "https://api.opendota.com/api/players/\(profileID)/recentMatches"
+        guard let url = URL(string: urlString) else { return }
+        var request = URLRequest(url: url, timeoutInterval: 10.0)
+        request.httpMethod = "GET"
+        print(2)
+        URLSession.shared.dataTask(with: request) { data, response, error in
+            guard let data else { return }
+            guard error == nil else { return }
+            let recentMatches = try? JSONDecoder().decode(RecentMatches.self, from: data)
+            guard let recentMatches else { return }
+            DispatchQueue.main.async {
+                if recentMatches.count > 5 {
+                    for i in 0...4 {
+                        self.matches.append(recentMatches[i])
+                    }
+                } else {
+                    for match in recentMatches {
+                        self.matches.append(match)
+                    }
+                }
+                self.recentMatchesTableView.reloadData()
+            }
+        }.resume()
+    }
+    
+    // MARK: - Setup Table Views
+    private func setupTableViews() {
+        self.featuredHeroesTableView.delegate = self
+        self.featuredHeroesTableView.dataSource = self
+        self.recentMatchesTableView.delegate = self
+        self.recentMatchesTableView.dataSource = self
+    }
 }
