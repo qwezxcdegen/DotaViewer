@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		074B425729C9B8D600702CEE /* FeaturedHeroTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 074B425629C9B8D600702CEE /* FeaturedHeroTableViewCell.swift */; };
 		075E7BB829C8A5F400B2724E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 075E7BB729C8A5F400B2724E /* AppDelegate.swift */; };
 		075E7BBA29C8A5F400B2724E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 075E7BB929C8A5F400B2724E /* SceneDelegate.swift */; };
 		075E7BBC29C8A5F400B2724E /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 075E7BBB29C8A5F400B2724E /* SearchViewController.swift */; };
@@ -19,10 +20,14 @@
 		075E7BD229C8C99E00B2724E /* UIImageView + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 075E7BD129C8C99D00B2724E /* UIImageView + Extension.swift */; };
 		075E7BD429C8CC3600B2724E /* String + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 075E7BD329C8CC3600B2724E /* String + Extension.swift */; };
 		075E7BDA29C8E5C800B2724E /* DetailedProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 075E7BD929C8E5C800B2724E /* DetailedProfileViewController.swift */; };
-		075E7BDC29C8F53B00B2724E /* DetailedProfileModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 075E7BDB29C8F53B00B2724E /* DetailedProfileModel.swift */; };
+		075E7BDC29C8F53B00B2724E /* WinLoseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 075E7BDB29C8F53B00B2724E /* WinLoseModel.swift */; };
+		0764D3CA29C9BBD20084B913 /* DetailedProfileVC + FeaturedHeroesTV.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0764D3C929C9BBD20084B913 /* DetailedProfileVC + FeaturedHeroesTV.swift */; };
+		07F281B729C90D54003F0332 /* CalculatedData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07F281B629C90D54003F0332 /* CalculatedData.swift */; };
+		07F281B929C90EB7003F0332 /* HeroModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07F281B829C90EB7003F0332 /* HeroModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		074B425629C9B8D600702CEE /* FeaturedHeroTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeaturedHeroTableViewCell.swift; sourceTree = "<group>"; };
 		075E7BB429C8A5F400B2724E /* DotaViewer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DotaViewer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		075E7BB729C8A5F400B2724E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		075E7BB929C8A5F400B2724E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -37,7 +42,10 @@
 		075E7BD129C8C99D00B2724E /* UIImageView + Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView + Extension.swift"; sourceTree = "<group>"; };
 		075E7BD329C8CC3600B2724E /* String + Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String + Extension.swift"; sourceTree = "<group>"; };
 		075E7BD929C8E5C800B2724E /* DetailedProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailedProfileViewController.swift; sourceTree = "<group>"; };
-		075E7BDB29C8F53B00B2724E /* DetailedProfileModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailedProfileModel.swift; sourceTree = "<group>"; };
+		075E7BDB29C8F53B00B2724E /* WinLoseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WinLoseModel.swift; sourceTree = "<group>"; };
+		0764D3C929C9BBD20084B913 /* DetailedProfileVC + FeaturedHeroesTV.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DetailedProfileVC + FeaturedHeroesTV.swift"; sourceTree = "<group>"; };
+		07F281B629C90D54003F0332 /* CalculatedData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculatedData.swift; sourceTree = "<group>"; };
+		07F281B829C90EB7003F0332 /* HeroModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeroModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,6 +59,25 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		074B425829C9B8F400702CEE /* First VC */ = {
+			isa = PBXGroup;
+			children = (
+				075E7BBB29C8A5F400B2724E /* SearchViewController.swift */,
+				075E7BCB29C8ADCB00B2724E /* SearchVC + TableVC.swift */,
+				075E7BCF29C8B0F100B2724E /* ProfileModel.swift */,
+				075E7BCD29C8AEF700B2724E /* ProfileTableViewCell.swift */,
+			);
+			name = "First VC";
+			sourceTree = "<group>";
+		};
+		074B425A29C9B93200702CEE /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				075E7BBD29C8A5F400B2724E /* Main.storyboard */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
 		075E7BAB29C8A5F400B2724E = {
 			isa = PBXGroup;
 			children = (
@@ -70,22 +97,39 @@
 		075E7BB629C8A5F400B2724E /* DotaViewer */ = {
 			isa = PBXGroup;
 			children = (
-				075E7BB929C8A5F400B2724E /* SceneDelegate.swift */,
-				075E7BB729C8A5F400B2724E /* AppDelegate.swift */,
-				075E7BCF29C8B0F100B2724E /* ProfileModel.swift */,
-				075E7BBB29C8A5F400B2724E /* SearchViewController.swift */,
-				075E7BD929C8E5C800B2724E /* DetailedProfileViewController.swift */,
-				075E7BDB29C8F53B00B2724E /* DetailedProfileModel.swift */,
-				075E7BCB29C8ADCB00B2724E /* SearchVC + TableVC.swift */,
-				075E7BD129C8C99D00B2724E /* UIImageView + Extension.swift */,
-				075E7BD329C8CC3600B2724E /* String + Extension.swift */,
-				075E7BCD29C8AEF700B2724E /* ProfileTableViewCell.swift */,
-				075E7BC029C8A5F400B2724E /* Assets.xcassets */,
-				075E7BBD29C8A5F400B2724E /* Main.storyboard */,
-				075E7BC229C8A5F400B2724E /* LaunchScreen.storyboard */,
-				075E7BC529C8A5F400B2724E /* Info.plist */,
+				0764D3CC29C9BEC70084B913 /* Detailed VC */,
+				0764D3CB29C9BEB70084B913 /* Supporting Files */,
+				074B425A29C9B93200702CEE /* Views */,
+				074B425829C9B8F400702CEE /* First VC */,
 			);
 			path = DotaViewer;
+			sourceTree = "<group>";
+		};
+		0764D3CB29C9BEB70084B913 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				075E7BB929C8A5F400B2724E /* SceneDelegate.swift */,
+				075E7BB729C8A5F400B2724E /* AppDelegate.swift */,
+				075E7BD129C8C99D00B2724E /* UIImageView + Extension.swift */,
+				075E7BD329C8CC3600B2724E /* String + Extension.swift */,
+				075E7BC229C8A5F400B2724E /* LaunchScreen.storyboard */,
+				075E7BC529C8A5F400B2724E /* Info.plist */,
+				075E7BC029C8A5F400B2724E /* Assets.xcassets */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		0764D3CC29C9BEC70084B913 /* Detailed VC */ = {
+			isa = PBXGroup;
+			children = (
+				075E7BD929C8E5C800B2724E /* DetailedProfileViewController.swift */,
+				0764D3C929C9BBD20084B913 /* DetailedProfileVC + FeaturedHeroesTV.swift */,
+				075E7BDB29C8F53B00B2724E /* WinLoseModel.swift */,
+				074B425629C9B8D600702CEE /* FeaturedHeroTableViewCell.swift */,
+				07F281B629C90D54003F0332 /* CalculatedData.swift */,
+				07F281B829C90EB7003F0332 /* HeroModel.swift */,
+			);
+			name = "Detailed VC";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -159,12 +203,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0764D3CA29C9BBD20084B913 /* DetailedProfileVC + FeaturedHeroesTV.swift in Sources */,
 				075E7BBC29C8A5F400B2724E /* SearchViewController.swift in Sources */,
 				075E7BB829C8A5F400B2724E /* AppDelegate.swift in Sources */,
 				075E7BD429C8CC3600B2724E /* String + Extension.swift in Sources */,
 				075E7BD229C8C99E00B2724E /* UIImageView + Extension.swift in Sources */,
 				075E7BCC29C8ADCB00B2724E /* SearchVC + TableVC.swift in Sources */,
-				075E7BDC29C8F53B00B2724E /* DetailedProfileModel.swift in Sources */,
+				07F281B929C90EB7003F0332 /* HeroModel.swift in Sources */,
+				075E7BDC29C8F53B00B2724E /* WinLoseModel.swift in Sources */,
+				07F281B729C90D54003F0332 /* CalculatedData.swift in Sources */,
+				074B425729C9B8D600702CEE /* FeaturedHeroTableViewCell.swift in Sources */,
 				075E7BDA29C8E5C800B2724E /* DetailedProfileViewController.swift in Sources */,
 				075E7BD029C8B0F100B2724E /* ProfileModel.swift in Sources */,
 				075E7BCE29C8AEF700B2724E /* ProfileTableViewCell.swift in Sources */,
