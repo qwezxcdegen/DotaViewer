@@ -22,9 +22,13 @@ extension DetailedProfileViewController: UITableViewDelegate, UITableViewDataSou
         } else if tableView == recentMatchesTableView {
             return matches.count
             
+        // Played With
+        } else if tableView == playedWithTableView {
+            return players.count
+            
         // Else
         } else {
-            return 1
+            return 0
         }
     }
     
@@ -55,6 +59,22 @@ extension DetailedProfileViewController: UITableViewDelegate, UITableViewDataSou
             cell.assistantsCountLabel.text = String(matches[indexPath.row].assists)
             cell.deathsCountLabel.text = String(matches[indexPath.row].deaths)
             cell.howManyTimeAgoLabel.text = timeSince(seconds: matches[indexPath.row].start_time)
+            if matches[indexPath.row].didWin {
+                cell.heroNameLabel.textColor = .systemGreen
+            } else {
+                cell.heroNameLabel.textColor = .systemRed
+            }
+            
+            return cell
+            
+        // Played With
+        } else if tableView == playedWithTableView {
+            let cell = playedWithTableView.dequeueReusableCell(withIdentifier: "playedWith", for: indexPath) as! PlayedWithTableViewCell
+            
+            cell.gamesLabel.text = String(players[indexPath.row].games)
+            cell.winsLabel.text = String(players[indexPath.row].win)
+            cell.nicknameLabel.text = players[indexPath.row].personaname
+            cell.avatarImage.load(url: URL(string: players[indexPath.row].avatarfull)!)
             
             return cell
             
@@ -72,6 +92,10 @@ extension DetailedProfileViewController: UITableViewDelegate, UITableViewDataSou
         // Recent Matches
         } else if tableView == recentMatchesTableView {
             return "Recent matches"
+            
+        // Played with
+        } else if tableView == playedWithTableView {
+            return "Played with"
             
         // Else
         } else {

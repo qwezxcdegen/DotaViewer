@@ -16,6 +16,9 @@ class DetailedProfileViewController: UIViewController {
     // Recent Matches TV
     @IBOutlet weak var recentMatchesTableView: UITableView!
     
+    // Played With TV
+    @IBOutlet weak var playedWithTableView: UITableView!
+    
     
     // Nav bar
     @IBOutlet weak var navigationBarLabel: UINavigationItem!
@@ -44,6 +47,9 @@ class DetailedProfileViewController: UIViewController {
     // Recent matches
     var matches: RecentMatches = []
     
+    // Players
+    var players: Peers = []
+    
     // MARK: - ViewDidLoad
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -57,6 +63,8 @@ class DetailedProfileViewController: UIViewController {
         
         fetchRecentMatches()
         
+        fetchPlayers()
+        
         profileImage.load(url: URL(string: profileImageString)!)
         
         print(profileID)
@@ -67,9 +75,6 @@ class DetailedProfileViewController: UIViewController {
     @IBAction func backButtonPressed(_ sender: UIBarButtonItem) {
         self.dismiss(animated: true)
     }
-    
-    
-    
     
     // MARK: - Fetch Wins Loses
     private func fetchWinLoses() {
@@ -122,7 +127,6 @@ class DetailedProfileViewController: UIViewController {
         guard let url = URL(string: urlString) else { return }
         var request = URLRequest(url: url, timeoutInterval: 10.0)
         request.httpMethod = "GET"
-        print(2)
         URLSession.shared.dataTask(with: request) { data, response, error in
             guard let data else { return }
             guard error == nil else { return }
@@ -143,11 +147,40 @@ class DetailedProfileViewController: UIViewController {
         }.resume()
     }
     
+    // MARK: - Fetch Players
+    private func fetchPlayers() {
+        guard profileID != "" else { return }
+        let urlString = "https://api.opendota.com/api/players/\(profileID)/peers"
+        guard let url = URL(string: urlString) else { return }
+        var request = URLRequest(url: url, timeoutInterval: 10.0)
+        request.httpMethod = "GET"
+        URLSession.shared.dataTask(with: request) { data, response, error in
+            guard let data else { return }
+            guard error == nil else { return }
+            let playedWith = try? JSONDecoder().decode(Peers.self, from: data)
+            guard let playedWith else { return }
+            DispatchQueue.main.async {
+                if playedWith.count > 5 {
+                    for i in 0...4 {
+                        self.players.append(playedWith[i])
+                    }
+                } else {
+                    for player in playedWith {
+                        self.players.append(player)
+                    }
+                }
+                self.playedWithTableView.reloadData()
+            }
+        }.resume()
+    }
+    
     // MARK: - Setup Table Views
     private func setupTableViews() {
         self.featuredHeroesTableView.delegate = self
         self.featuredHeroesTableView.dataSource = self
         self.recentMatchesTableView.delegate = self
         self.recentMatchesTableView.dataSource = self
+        self.playedWithTableView.delegate = self
+        self.playedWithTableView.dataSource = self
     }
 }
