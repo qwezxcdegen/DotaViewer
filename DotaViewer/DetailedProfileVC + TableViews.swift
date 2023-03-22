@@ -103,5 +103,16 @@ extension DetailedProfileViewController: UITableViewDelegate, UITableViewDataSou
         }
     }
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if tableView == playedWithTableView {
+            self.profileID = String(players[indexPath.row].account_id)
+            self.profileName = players[indexPath.row].personaname
+            self.profileImageString = players[indexPath.row].avatarfull
+            heroes = []
+            matches = []
+            players = []
+            self.viewDidLoad()
+        }
+    }
     
 }

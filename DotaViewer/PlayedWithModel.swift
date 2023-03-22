@@ -8,6 +8,7 @@
 import Foundation
 
 struct Peer: Codable {
+    let account_id: Int
     let games: Int
     let win: Int
     let personaname: String
