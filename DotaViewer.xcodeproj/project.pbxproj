@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		072703A229CB5C26000D2369 /* PlayedWithModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 072703A129CB5C26000D2369 /* PlayedWithModel.swift */; };
+		072703A429CB5F69000D2369 /* PlayedWithTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 072703A329CB5F69000D2369 /* PlayedWithTableViewCell.swift */; };
 		074B425729C9B8D600702CEE /* FeaturedHeroTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 074B425629C9B8D600702CEE /* FeaturedHeroTableViewCell.swift */; };
 		075E7BB829C8A5F400B2724E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 075E7BB729C8A5F400B2724E /* AppDelegate.swift */; };
 		075E7BBA29C8A5F400B2724E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 075E7BB929C8A5F400B2724E /* SceneDelegate.swift */; };
@@ -29,6 +31,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		072703A129CB5C26000D2369 /* PlayedWithModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayedWithModel.swift; sourceTree = "<group>"; };
+		072703A329CB5F69000D2369 /* PlayedWithTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayedWithTableViewCell.swift; sourceTree = "<group>"; };
 		074B425629C9B8D600702CEE /* FeaturedHeroTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeaturedHeroTableViewCell.swift; sourceTree = "<group>"; };
 		075E7BB429C8A5F400B2724E /* DotaViewer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DotaViewer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		075E7BB729C8A5F400B2724E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -63,6 +67,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		072703A029CB5BFF000D2369 /* PlayedWith */ = {
+			isa = PBXGroup;
+			children = (
+				072703A129CB5C26000D2369 /* PlayedWithModel.swift */,
+				072703A329CB5F69000D2369 /* PlayedWithTableViewCell.swift */,
+			);
+			name = PlayedWith;
+			sourceTree = "<group>";
+		};
 		074B425829C9B8F400702CEE /* First VC */ = {
 			isa = PBXGroup;
 			children = (
@@ -152,6 +165,7 @@
 		0764D3CC29C9BEC70084B913 /* Detailed VC */ = {
 			isa = PBXGroup;
 			children = (
+				072703A029CB5BFF000D2369 /* PlayedWith */,
 				0763C30529CA02D700E0C759 /* Recent Matches */,
 				0763C30429CA02AF00E0C759 /* WinLoses */,
 				0763C30329CA029A00E0C759 /* FeaturedHeroes */,
@@ -235,6 +249,7 @@
 			files = (
 				0763C30729CA031D00E0C759 /* RecentMatchModel.swift in Sources */,
 				0764D3CA29C9BBD20084B913 /* DetailedProfileVC + TableViews.swift in Sources */,
+				072703A429CB5F69000D2369 /* PlayedWithTableViewCell.swift in Sources */,
 				075E7BBC29C8A5F400B2724E /* SearchViewController.swift in Sources */,
 				075E7BB829C8A5F400B2724E /* AppDelegate.swift in Sources */,
 				075E7BD429C8CC3600B2724E /* String + Extension.swift in Sources */,
@@ -246,6 +261,7 @@
 				0763C30929CA08E600E0C759 /* RecentMatchTableViewCell.swift in Sources */,
 				074B425729C9B8D600702CEE /* FeaturedHeroTableViewCell.swift in Sources */,
 				075E7BDA29C8E5C800B2724E /* DetailedProfileViewController.swift in Sources */,
+				072703A229CB5C26000D2369 /* PlayedWithModel.swift in Sources */,
 				075E7BD029C8B0F100B2724E /* ProfileModel.swift in Sources */,
 				075E7BCE29C8AEF700B2724E /* ProfileTableViewCell.swift in Sources */,
 				075E7BBA29C8A5F400B2724E /* SceneDelegate.swift in Sources */,
