@@ -112,6 +112,9 @@ extension DetailedProfileViewController: UITableViewDelegate, UITableViewDataSou
             matches = []
             players = []
             self.viewDidLoad()
+            playedWithTableView.reloadData()
+            recentMatchesTableView.reloadData()
+            featuredHeroesTableView.reloadData()
         }
     }
     
